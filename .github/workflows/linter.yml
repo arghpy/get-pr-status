@@ -1,0 +1,29 @@
+---
+name: Lint changed files
+
+on:
+  pull_request:
+    types: [ready_for_review]
+
+permissions:
+  contents: read
+  packages: read
+  # To report GitHub Actions status checks
+  statuses: write
+
+jobs:
+  linting:
+    runs-on: ${{ vars.RUNNER }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Start linting
+        uses: super-linter/super-linter@v7.2.1
+        env:
+          LOG_LEVEL: ERROR
+          VALIDATE_ALL_CODEBASE: ${{ contains(github.event.*.labels.*.name, 'all codebase') }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
