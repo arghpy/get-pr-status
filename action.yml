@@ -2,4 +2,4 @@ name: Get PR Status
 description: get different stats about the pull request
 runs:
   using: node20
-  main: src/index.js
+  main: dist/index.js
