@@ -1,0 +1,28 @@
+{
+  "name": "get-pr-status",
+  "version": "1.0.0",
+  "description": "[![Super-Linter](https://github.com/arghpy/get-pr-status/actions/workflows/linter.yml/badge.svg)](https://github.com/marketplace/actions/super-linter)",
+  "main": "index.js",
+  "scripts": {
+    "build": "node esbuild.cjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arghpy/get-pr-status.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/arghpy/get-pr-status/issues"
+  },
+  "homepage": "https://github.com/arghpy/get-pr-status#readme",
+  "dependencies": {
+    "@actions/core": "^1.11.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.0"
+  }
+}
